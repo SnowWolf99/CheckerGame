@@ -61,5 +61,22 @@ public class Board {
    public int getSize()
    {
       return BOARDSIZE;
+   }
+   
+   
+   public int countPieces(Player player)
+   {
+      int pieceInt = player.getPiece().getType();
+      int count = 0;
+      
+      for(int i = 0; i < BOARDSIZE; i++)
+		{
+			for(int x = 0; x < BOARDSIZE; x++)
+			{
+				if(gameBoard[i][x].equals(player.getPiece()))
+               count++;
+			}
+		}  
+      return count;
    }   
 }
